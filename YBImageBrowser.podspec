@@ -11,15 +11,15 @@ Pod::Spec.new do |s|
   					an easy way to use.
                    DESC
 
-  s.homepage     = "https://github.com/indulgeIn"
+  s.homepage     = "https://github.com/Liangxue"
 
   s.license      = "MIT"
 
-  s.author             = { "杨波" => "1106355439@qq.com" }
+  s.author             = { "Liangxue" => "15145078036@163.com" }
  
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/indulgeIn/YBImageBrowser.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Liangxue/YBImageBrowser.git", :tag => "#{s.version}" }
 
   s.source_files  = "YBImageBrowser/**/*.{h,m}"
   # s.exclude_files = "YBImageBrowser/Exclude"

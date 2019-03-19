@@ -89,12 +89,13 @@ static CGFloat kToolBarDefaultsHeight = 50.0;
     }
     
     self->_data = data;
-    if (totalPage <= 1) {
-        self.indexLabel.hidden = YES;
-    } else {
-        self.indexLabel.hidden  = NO;
-        self.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld", pageIndex + 1, totalPage];
-    }
+    self.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld", pageIndex + 1, totalPage];
+//    if (totalPage <= 1) {
+//        self.indexLabel.hidden = YES;
+//    } else {
+//        self.indexLabel.hidden  = NO;
+//        self.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld", pageIndex + 1, totalPage];
+//    }
 }
 
 #pragma mark - event
