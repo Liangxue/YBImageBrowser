@@ -60,9 +60,10 @@ static CGFloat kToolBarDefaultsHeight = 50.0;
     if (containerSize.height > containerSize.width && YBIB_IS_IPHONEX) height += YBIB_HEIGHT_STATUSBAR;
     if (containerSize.height < containerSize.width && YBIB_IS_IPHONEX) hExtra += YBIB_HEIGHT_EXTRABOTTOM;
     
-    self.frame = CGRectMake(0, 0, width, height);
+    self.frame = CGRectMake(0, YBIMAGEBROWSER_HEIGHT - height - YBIB_HEIGHT_EXTRABOTTOM, width, height);
     self.gradient.frame = self.bounds;
-    self.indexLabel.frame = CGRectMake(15 + hExtra, height - kToolBarDefaultsHeight, labelWidth, kToolBarDefaultsHeight);
+//    self.backgroundColor = [UIColor redColor];
+    self.indexLabel.frame = CGRectMake(YBIMAGEBROWSER_WIDTH / 2 - labelWidth / 2, height - kToolBarDefaultsHeight, labelWidth, kToolBarDefaultsHeight);
     self.operationButton.frame = CGRectMake(width - buttonWidth - hExtra, height - kToolBarDefaultsHeight, buttonWidth, kToolBarDefaultsHeight);
 }
 
@@ -89,7 +90,7 @@ static CGFloat kToolBarDefaultsHeight = 50.0;
     }
     
     self->_data = data;
-    self.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld", pageIndex + 1, totalPage];
+    self.indexLabel.text = [NSString stringWithFormat:@"%ld / %ld", pageIndex + 1, totalPage];
 //    if (totalPage <= 1) {
 //        self.indexLabel.hidden = YES;
 //    } else {
@@ -129,8 +130,8 @@ static CGFloat kToolBarDefaultsHeight = 50.0;
     if (!_indexLabel) {
         _indexLabel = [UILabel new];
         _indexLabel.textColor = [UIColor whiteColor];
-        _indexLabel.font = [UIFont boldSystemFontOfSize:16];
-        _indexLabel.textAlignment = NSTextAlignmentLeft;
+        _indexLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size: 16];
+        _indexLabel.textAlignment = NSTextAlignmentCenter;
         _indexLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _indexLabel;
